@@ -3,7 +3,7 @@
   - This application will automatically create the table in DB on start service startup, however sql files have also been placed in folder "mysql-files"
   - Postman collection "DemoPaymentWebService.postman_collection.json" is available to test the service endpoints
   - This application is created in Java 8
-  - "CREATE DATABASE  IF NOT EXISTS `demo_payment`"
+
 #### How to run the application
 First create empty schema in mysql
 ```sh
