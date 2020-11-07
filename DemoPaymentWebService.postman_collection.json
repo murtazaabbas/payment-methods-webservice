@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "a0b38ad2-5a9c-4f09-9c4f-600be199dcf7",
+		"name": "DemoPaymentWebService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddPaymentMethod",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentMethods\": [\r\n        {\r\n            \"name\": \"credit card\",\r\n            \"displayName\": \"credit card\",\r\n            \"paymentType\": \"CREDIT_CARD\",\r\n            \"paymentPlans\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"netAmount\": 5.99,\r\n                    \"taxAmount\": 0,\r\n                    \"grossAmount\": 5.99,\r\n                    \"currency\": \"USD\",\r\n                    \"duration\": \"Month\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"alfa_lb\",\r\n            \"displayName\": \"Alfa Lebanon\",\r\n            \"paymentType\": \"MOBILE_CARRIER\",\r\n            \"paymentPlans\": [\r\n                {\r\n                    \"id\": 72,\r\n                    \"netAmount\": 5.99,\r\n                    \"taxAmount\": 0,\r\n                    \"grossAmount\": 5.99,\r\n                    \"currency\": \"USD\",\r\n                    \"duration\": \"Month\"\r\n                },\r\n                {\r\n                    \"id\": 54,\r\n                    \"netAmount\": 10,\r\n                    \"taxAmount\": 0,\r\n                    \"grossAmount\": 10,\r\n                    \"currency\": \"SAR\",\r\n                    \"duration\": \"Week\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"voucher\",\r\n            \"displayName\": \"Voucher\",\r\n            \"paymentType\": \"VOUCHER\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/configuration/payment-methods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPaymentMethods",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/configuration/payment-methods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaymentMethodByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/configuration/payment-methods?name=credit+card",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "credit+card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaymentMethodByPlanID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/configuration/payment-methods?id=72",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "72"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePaymentMethod",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentMethods\": [\r\n        {\r\n            \"name\": \"credit card\",\r\n            \"displayName\": \"credit card\",\r\n            \"paymentType\": \"CREDIT_CARD\",\r\n            \"paymentPlans\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"netAmount\": 9.90,\r\n                    \"taxAmount\": 0.10,\r\n                    \"grossAmount\": 10.00,\r\n                    \"currency\": \"USD\",\r\n                    \"duration\": \"Month\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/configuration/payment-methods?payment-methods=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					],
+					"query": [
+						{
+							"key": "payment-methods",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
